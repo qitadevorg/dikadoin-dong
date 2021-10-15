@@ -3,5 +3,7 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "Dikadoin.dong",
   },
-  plugins: [],
+  plugins: [
+    'gatsby-plugin-postcss'
+  ],
 };

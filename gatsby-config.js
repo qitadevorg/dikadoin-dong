@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://qitadev.github.io",
     title: "Dikadoin.dong",
   },
   plugins: [

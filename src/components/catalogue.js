@@ -5,7 +5,7 @@ import ProductItem from './product-item'
 export default function Catalogue() {
   return (
     <section className="bg-brand-yellow py-12 px-5">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h2 className="font-bold text-2xl text-center">
           Katalog Produk
         </h2>

@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import ProductItem from './product-item'
+import SkeletonProducts from './skeleton-products'
 
-export default function Catalogue() {
+export default function Catalogue({ products, isLoading }) {
+
+  const productList = products
+    .map(product => <ProductItem key={product.id} product={product} />)
+
   return (
     <section className="bg-brand-yellow py-12 px-5">
       <div className="max-w-5xl mx-auto">
@@ -12,7 +17,7 @@ export default function Catalogue() {
         <p className="mt-2 text-center">
           Kami menyediakan beberapa pilihan produk
         </p>
-        <ul className="mt-2 text-center flex justify-center">
+        <ul className="mt-8 text-center flex justify-center">
           <li>
             <Link to="/" className="block mx-2 bg-brand-primary px-3 py-1 rounded">
               Semua
@@ -30,12 +35,11 @@ export default function Catalogue() {
           </li>
         </ul>
         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
+          {
+            isLoading
+              ? <SkeletonProducts />
+              : productList
+          }
         </div>
       </div>
     </section>

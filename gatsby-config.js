@@ -11,6 +11,6 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    'gatsby-transformer-sharp'
   ],
 };

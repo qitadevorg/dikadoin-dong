@@ -9,7 +9,7 @@ export default function Footer () {
     return (
         <footer className="bg-brand-brown">
             <div className="max-w-6xl px-4 sm:px-0 py-6 sm:justify-between flex flex-col sm:flex-row items-start mx-auto">
-                <div id="identity" className="flex flex-col text-white m-4 sm:w-30p">
+                <div id="identity" className="flex flex-col text-white m-4 sm:w-3/10">
                     <div className="flex flex-row items-center">
                         <img src={logo} alt="dikadoin logo" width={75} />
                         <h1 className="text-2xl">

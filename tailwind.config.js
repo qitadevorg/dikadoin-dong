@@ -13,7 +13,7 @@ module.exports = {
         'brand-primary': '#FFDF91',
       },
       width: {
-        '30p': '30%'
+        '3/10': '30%'
       }
     },
   },

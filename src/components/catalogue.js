@@ -29,7 +29,7 @@ export default function Catalogue() {
             </Link>
           </li>
         </ul>
-        <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
           <ProductItem />
           <ProductItem />
           <ProductItem />

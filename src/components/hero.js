@@ -16,12 +16,13 @@ export default function Hero() {
             Yuk Belanja
           </button>
         </div>
-        <div className="mt-8 md:mt-0 md:ml-8 max-w-[400px] w-full">
+        <div className="mt-8 md:mt-0 md:ml-8">
           <StaticImage
             src="../images/hero-image-1.webp"
             alt="Hero 1"
             placeholder="none"
-            layout="fullWidth"
+            width={400}
+            layout="constrained"
           />
         </div>
       </div>

@@ -38,17 +38,17 @@ export default function Footer () {
 
                     <div className="flex flex-row sm:flex-col mt-4">
                         <IconContext.Provider value={{ size: '2em' }}>
-                            <a href="#" className="flex flex-row items-center">
+                            <a href="/" className="flex flex-row items-center">
                                 <FaInstagram />
                                 <span className="ml-4">Instagram</span>
                             </a>
                             <hr className="bg-brand-yellow mx-4 h-8 w-1 rounded-full sm:hidden" />
-                            <a href="#" className="flex flex-row items-center sm:mt-4">
+                            <a href="/" className="flex flex-row items-center sm:mt-4">
                                 <FaWhatsapp />
                                 <span className="ml-4">Whatsapp</span>
                             </a>
                             <hr className="bg-brand-yellow mx-4 h-8 w-1 rounded-full sm:hidden" />
-                            <a href="#" className="flex flex-row items-center sm:mt-4">
+                            <a href="/" className="flex flex-row items-center sm:mt-4">
                                 <FaShopify />
                                 <span className="ml-4">Shopee</span>
                             </a>

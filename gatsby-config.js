@@ -3,6 +3,7 @@ require("dotenv").config({
 });
 
 module.exports = {
+  pathPrefix: "/dikadoin-dong",
   siteMetadata: {
     siteUrl: "https://qitadev.github.io",
     title: "Dikadoin.dong",

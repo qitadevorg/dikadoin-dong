@@ -9,7 +9,7 @@ export default function Header() {
                     <img src={logo} alt="dikadoin logo" width={75} />
                     <span className="text-2xl ml-4">dikadoin.dong</span>
                 </a>
-                <div className="flex flex-row justify-between items-center font-semibold">
+                <div className="flex flex-row justify-between items-center font-semibold mt-4">
                     <a href="#" className="mx-4">Produk</a>
                     <a href="#" className="mx-4">Tentang Kami</a>
                     <a href="#" className="mx-4">Kontak</a>

@@ -4,6 +4,7 @@ import Catalogue from '../components/catalogue'
 import Header from '../components/header'
 import Hero from '../components/hero'
 import { getAllProducts } from '../data/products'
+import Footer from '../components/footer'
 
 export default function IndexPage() {
   const [products, setProducts] = useState([])
@@ -29,6 +30,7 @@ export default function IndexPage() {
         products={products}
         isLoading={isLoadingCatalogue}
       />
+      <Footer />
     </main>
   )
 }

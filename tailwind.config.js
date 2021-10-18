@@ -11,6 +11,9 @@ module.exports = {
         'brand-yellow': '#F8F4E1',
         'brand-brown': '#603814',
         'brand-primary': '#FFDF91',
+      },
+      width: {
+        '3/10': '30%'
       }
     },
   },

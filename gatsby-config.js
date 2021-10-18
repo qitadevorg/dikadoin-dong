@@ -8,6 +8,9 @@ module.exports = {
     title: "Dikadoin.dong",
   },
   plugins: [
-    'gatsby-plugin-postcss'
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
   ],
 };

@@ -3,6 +3,7 @@ import BrandStats from '../components/brand-stats'
 import Catalogue from '../components/catalogue'
 import Header from '../components/header'
 import Hero from '../components/hero'
+import About from '../components/about'
 import { getAllProducts } from '../data/products'
 import Footer from '../components/footer'
 
@@ -30,6 +31,7 @@ export default function IndexPage() {
         products={products}
         isLoading={isLoadingCatalogue}
       />
+      <About />
       <Footer />
     </main>
   )

@@ -5,7 +5,7 @@ import {StringParam, useQueryParam} from "use-query-params";
 import {ALL_TYPE, BOUQUET_TYPE, HAMPERS_TYPE} from "../constants/products";
 import Hampers from './hampers'
 
-export default function Catalogue({ products, isLoading }) {
+const Catalogue = React.forwardRef(({ products, isLoading }, ref) => {
   const [type, setType] = useQueryParam("type", StringParam)
 
   const productList = (
@@ -34,7 +34,7 @@ export default function Catalogue({ products, isLoading }) {
   }
 
   return (
-    <section className="bg-brand-yellow py-12 px-5">
+    <section ref={ref} className="bg-brand-yellow py-12 px-5">
       <div className="max-w-5xl mx-auto">
         <h2 className="font-bold text-2xl text-center">
           Katalog Produk
@@ -63,4 +63,6 @@ export default function Catalogue({ products, isLoading }) {
       </div>
     </section>
   )
-}
+})
+
+export default Catalogue

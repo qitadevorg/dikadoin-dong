@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Footer () {
+const Footer = React.forwardRef((_, ref) => {
     return (
-        <footer className="bg-brand-brown">
+        <footer ref={ref} className="bg-brand-brown">
             <div className="max-w-5xl mx-auto px-5 py-5 text-brand-yellow flex flex-col md:flex-row text-sm justify-between items-center">
                 <p className="my-4 text-center">
                     ©Dikadoin.dong 2021
@@ -41,4 +41,6 @@ export default function Footer () {
             </div>
         </footer>
     )
-}
+})
+
+export default Footer

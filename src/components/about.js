@@ -1,9 +1,9 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
-export default function About () {
+const About = React.forwardRef((_, ref) => {
     return (
-        <section className="bg-brand-yellow px-5 py-20">
+        <section ref={ref} className="bg-brand-yellow px-5 py-20">
             <div className="max-w-5xl flex sm:flex-row flex-col justify-between items-center mx-auto">
                 <div className="w-full sm:w-1/2 flex flex-col justify-start">
                     <h1 className="text-3xl font-bold">
@@ -26,4 +26,6 @@ export default function About () {
             </div>
         </section>
     )
-}
+})
+
+export default About

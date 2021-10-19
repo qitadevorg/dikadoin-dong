@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React, { useRef } from 'react'
 import Modal from './modal'
 import OrderForm from './order-form'
@@ -30,9 +31,12 @@ export default function ProductItem({ product }) {
         <Modal ref={orderModalRef} title="Beli Produk">
           <OrderForm product={product} />
         </Modal>
-        <button className="mt-2 px-4 py-2 rounded w-full text-sm font-medium">
+        <Link
+          to={`/products/${product.id}`}
+          className="mt-2 px-4 py-2 block text-center rounded w-full text-sm font-medium"
+        >
           Lihat Detail
-        </button>
+        </Link>
       </div>
     </article>
   )

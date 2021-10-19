@@ -30,3 +30,8 @@ export async function getProductsByType(type){
   const products = await getAllProducts();
   return products.filter(product => product.type === type);
 }
+
+export async function getProductsById(id){
+  const products = await getAllProducts();
+  return products.find(product => product.id === id);
+}

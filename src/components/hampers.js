@@ -3,65 +3,117 @@ import HampersItem from './hampers/hampers-item'
 import HampersBox from "./hampers/hampers-box";
 
 export default function Hampers () {
-  const hampersItem = [
+  const hampersItems = [
     {
       id: 1,
       name: "Alat Masak",
       price: "Rp 40000",
-      isSelected: false
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
     },
     {
       id: 2,
       name: "Alat Tulis",
       price: "Rp 30000",
-      isSelected: false
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
     },
     {
       id: 3,
       name: "Alat Kantor",
       price: "Rp 20000",
-      isSelected: false
-    }
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
+    {
+      id: 4,
+      name: "Alat Kantor",
+      price: "Rp 20000",
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
+    {
+      id: 5,
+      name: "Alat Kantor",
+      price: "Rp 20000",
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
+    {
+      id: 6,
+      name: "Alat Kantor",
+      price: "Rp 20000",
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
+    {
+      id: 7,
+      name: "Alat Kantor",
+      price: "Rp 20000",
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
+    {
+      id: 8,
+      name: "Alat Kantor",
+      price: "Rp 20000",
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
+    {
+      id: 9,
+      name: "Alat Kantor",
+      price: "Rp 20000",
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
+    {
+      id: 10,
+      name: "Alat Kantor",
+      price: "Rp 20000",
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
+    {
+      id: 11,
+      name: "Alat Kantor",
+      price: "Rp 20000",
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
+    {
+      id: 12,
+      name: "Alat Kantor",
+      price: "Rp 20000",
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
+    {
+      id: 13,
+      name: "Alat Kantor",
+      price: "Rp 20000",
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
+    },
   ]
 
-  const hampersBox = [
+  const hampersBoxes = [
     {
       id: 1,
       name: "Box Kotak",
       price: "Rp 10000",
-      isSelected: false
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
     },
     {
       id: 2,
       name: "Box Bundar",
       price: "Rp 15000",
-      isSelected: false
+      img_url: 'https://res.cloudinary.com/dau2gxgbw/image/upload/c_scale,w_360/v1634525074/dikadoin.dong/EE04D058-D997-4B0E-8E6D-4F562C891300_coxagl.jpg'
     }
   ]
 
-  const renderItem = (
-    <div id="item-wrapper" className="grid grid-cols-3 gap-4 mt-4">
-      {
-        hampersItem.map(hampers => <HampersItem key={hampers.id} hamperItem={hampers} />)
-      }
-    </div>
-  )
-
-  const renderBox = (
-    <div id="item-wrapper" className="grid grid-cols-3 gap-4 mt-4">
-      {
-        hampersBox.map(hampers => <HampersBox key={hampers.id} hamperBox={hampers} />)
-      }
-    </div>
-  )
-
   return (
-    <section id="items" className="w-full mt-4 flex flex-col">
-      <h1 className="text-3xl font-bold text-brand-brown">Pilih Item</h1>
-      {renderItem}
-      <h1 className="text-3xl font-bold text-brand-brown mt-8">Pilih Box</h1>
-      {renderBox}
-      <button className="block mt-8 py-4 rounded-lg bg-brand-brown text-brand-yellow font-bold">
+    <section id="items" className="w-full mt-4">
+      <h2 className="text-xl font-bold text-brand-brown">
+        Pilih Item
+      </h2>
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 mt-4">
+        {hampersItems.map(item => <HampersItem key={item.id} hampersItem={item} />)}
+      </div>
+      <h2 className="text-xl font-bold text-brand-brown mt-8">
+        Pilih Box
+      </h2>
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 mt-4">
+        {hampersBoxes.map(box => <HampersBox key={box.id} hampersBox={box} />)}
+      </div>
+      <button className="block mt-8 px-5 py-4 rounded-lg bg-brand-primary font-medium">
         Pesan Sekarang
       </button>
     </section>

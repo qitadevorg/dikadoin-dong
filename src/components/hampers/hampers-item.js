@@ -1,20 +1,21 @@
 import React from 'react'
-import {StaticImage} from "gatsby-plugin-image";
 
-export default function HampersItem ({ hamperItem }) {
+export default function HampersItem ({ hampersItem }) {
   return (
-    <article id={`item-${hamperItem.id}`} className={`bg-white border-2 rounded-lg overflow-hidden ${hamperItem.isSelected ? 'border-green-400' : 'border-brand-brown'}`}>
-      <StaticImage
-        src="../images/hero-image-1.webp"
-        alt="Hero 1"
-        placeholder="none"
-        width={400}
-        layout="constrained"
-      />
-      <div className="p-4">
-        <h1 className="text-xl text-brand-brown font-bold">{hamperItem.name}</h1>
-        <p className="mt-4">
-          {hamperItem.price}
+    <article className={`bg-white border rounded-lg overflow-hidden ${hampersItem.isSelected ? 'border-green-400' : 'border-brand-brown'}`}>
+      <div className="aspect-w-4 aspect-h-3">
+        <img
+          src={hampersItem.img_url}
+          alt={hampersItem.name}
+          className="object-cover"
+        />
+      </div>
+      <div className="p-3">
+        <h3 className="text-brand-brown font-bold">
+          {hampersItem.name}
+        </h3>
+        <p className="mt-1 text-sm">
+          {hampersItem.price}
         </p>
       </div>
     </article>

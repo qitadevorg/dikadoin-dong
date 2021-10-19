@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import Modal from './modal'
+import OrderForm from './order-form'
 
 export default function ProductItem({ product }) {
+  const orderModalRef = useRef()
+  
   return (
     <article className="bg-white rounded-lg overflow-hidden border border-brand-brown">
       <div className="aspect-w-4 aspect-h-3">
@@ -17,9 +21,15 @@ export default function ProductItem({ product }) {
         <p>
           Rp {product.price}
         </p>
-        <button className="mt-2 px-4 py-2 bg-brand-primary rounded w-full text-sm font-medium">
+        <button
+          className="mt-2 px-4 py-2 bg-brand-primary rounded w-full text-sm font-medium"
+          onClick={() => orderModalRef.current.openModal()}
+        >
           Beli Sekarang
         </button>
+        <Modal ref={orderModalRef} title="Beli Produk">
+          <OrderForm product={product} />
+        </Modal>
         <button className="mt-2 px-4 py-2 rounded w-full text-sm font-medium">
           Lihat Detail
         </button>

@@ -1,12 +1,37 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import ProductItem from './product-item'
 import SkeletonProducts from './skeleton-products'
+import {StringParam, useQueryParam} from "use-query-params";
+import {ALL_TYPE, BOUQUET_TYPE, HAMPERS_TYPE} from "../constants/products";
+import Hampers from './hampers'
 
 export default function Catalogue({ products, isLoading }) {
+  const [type, setType] = useQueryParam("type", StringParam)
 
-  const productList = products
-    .map(product => <ProductItem key={product.id} product={product} />)
+  const productList = (
+    <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
+      {products.map(product => <ProductItem key={product.id} product={product} />)}
+    </div>
+  )
+
+  const filteredProducts = () => {
+    if([ALL_TYPE, undefined].includes(type)) {
+      if (isLoading) {
+        return <SkeletonProducts />
+      }
+      return productList
+    } else if (type === BOUQUET_TYPE) {
+      if (isLoading) {
+        return <SkeletonProducts />
+      }
+      return productList
+    } else if (type === HAMPERS_TYPE) {
+      if (isLoading) {
+        return <SkeletonProducts />
+      }
+      return <Hampers />
+    }
+  }
 
   return (
     <section className="bg-brand-yellow py-12 px-5">
@@ -19,28 +44,22 @@ export default function Catalogue({ products, isLoading }) {
         </p>
         <ul className="mt-8 text-center flex justify-center">
           <li>
-            <Link to="/" className="block mx-2 bg-brand-primary px-3 py-1 rounded">
+            <button onClick={() => setType(ALL_TYPE)} className={`block mx-2 px-3 py-1 rounded ${[ALL_TYPE, undefined].includes(type) ? 'bg-brand-primary' : ''}`}>
               Semua
-            </Link>
+            </button>
           </li>
           <li>
-            <Link to="/bouquets" className="block mx-2 px-3 py-1 rounded">
+            <button onClick={() => setType(BOUQUET_TYPE)} className={`block mx-2 px-3 py-1 rounded ${type === BOUQUET_TYPE ? 'bg-brand-primary' : ''}`}>
               Buket
-            </Link>
+            </button>
           </li>
           <li>
-            <Link to="/hampers" className="block mx-2 px-3 py-1 rounded">
+            <button onClick={() => setType(HAMPERS_TYPE)} className={`block mx-2 px-3 py-1 rounded ${type === HAMPERS_TYPE ? 'bg-brand-primary' : ''}`}>
               Hampers
-            </Link>
+            </button>
           </li>
         </ul>
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
-          {
-            isLoading
-              ? <SkeletonProducts />
-              : productList
-          }
-        </div>
+        {filteredProducts()}
       </div>
     </section>
   )

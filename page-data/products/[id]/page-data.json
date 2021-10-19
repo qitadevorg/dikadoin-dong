@@ -1,0 +1,6 @@
+{
+    "componentChunkName": "component---src-pages-products-[id]-js",
+    "path": "/products/[id]/",
+    "result": {"pageContext":{"matchPath":"/products/:id"}},
+    "staticQueryHashes": [],
+    "matchPath": "/products/:id"}

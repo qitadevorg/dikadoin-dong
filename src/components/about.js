@@ -16,9 +16,10 @@ export default function About () {
                 </div>
                 <div className="w-full sm:w-1/2 mt-8 flex justify-center sm:mt-0">
                     <StaticImage
-                        src="../images/dikadoin-dong-logo.webp"
+                        src="../images/hero-image-1.webp"
                         alt="dikadoin logo"
                         width={300}
+                        placeholder="none"
                         layout="constrained"
                     />
                 </div>

@@ -7,12 +7,15 @@ export default function Product({ params }) {
   const productId = params.id
   const [product, setProduct] = useState({})
   const [productsInThisType, setProductsInThisType] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const getProduct = async () => {
+    setIsLoading(true)
     const product = await getProductsById(productId)
     setProduct(product)
     const productsInThisType = await getProductsByType(product.type)
     setProductsInThisType(productsInThisType)
+    setIsLoading(false)
   }
 
   useEffect(() => {
@@ -25,6 +28,7 @@ export default function Product({ params }) {
       <ProductDetail
         product={product}
         productsInThisType={productsInThisType}
+        isLoading={isLoading}
       />
     </main>
   )

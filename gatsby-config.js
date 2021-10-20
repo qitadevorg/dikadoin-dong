@@ -15,6 +15,23 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-use-query-params',
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-favicons',
+      options: {
+        logo: './src/images/dikadoin-dong-logo.webp',
+        appName: 'Dikadoin.dong',
+        background: '#fff',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          yandex: false,
+          windows: false
+        }
+      }
+    }
   ],
 };

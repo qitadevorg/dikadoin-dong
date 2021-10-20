@@ -29,7 +29,7 @@ export default function ProductDetail({product, productsInThisType, isLoading}) 
                   Terjual 40
                 </p>
                 <p className="mt-4 font-bold text-4xl">
-                  Rp {product.price}
+                  {product.price}
                 </p>
                 <p className="mt-8 font-medium">
                   Deskripsi

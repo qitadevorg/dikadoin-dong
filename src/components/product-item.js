@@ -20,7 +20,7 @@ export default function ProductItem({ product }) {
           {product.type} ({product.name})
         </h2>
         <p>
-          Rp {product.price}
+          {product.price}
         </p>
         <button
           className="mt-2 px-4 py-2 bg-brand-primary rounded w-full text-sm font-medium"

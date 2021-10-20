@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function HampersItem ({ hampersItem }) {
+export default function HampersItem ({ hampersItem, isChecked, onClick }) {
   return (
-    <article className={`bg-white border rounded-lg overflow-hidden border-brand-brown`}>
+    <label htmlFor={`item${hampersItem.id}`} className={`bg-white rounded-lg overflow-hidden border filter border-brand-brown transition cursor-pointer ${isChecked ? 'ring ring-brand-brown' : 'ring-0 grayscale'}`}>
       <div className="aspect-w-4 aspect-h-3">
         <img
           src={hampersItem.img_url}
@@ -18,6 +18,13 @@ export default function HampersItem ({ hampersItem }) {
           {hampersItem.price}
         </p>
       </div>
-    </article>
+      <input
+        id={`item${hampersItem.id}`}
+        type="checkbox"
+        className="hidden"
+        defaultChecked={isChecked}
+        onClick={onClick}
+      />
+    </label>
   )
 }

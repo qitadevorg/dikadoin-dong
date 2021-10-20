@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function HampersBox ({ hampersBox }) {
+export default function HampersBox ({ hampersBox, isChecked, onClick }) {
   return (
-    <article id={`item-${hampersBox.id}`} className={`bg-white border rounded-lg overflow-hidden ${hampersBox.isSelected ? 'border-green-400' : 'border-brand-brown'}`}>
+    <label htmlFor={`box${hampersBox.id}`} className={`bg-white rounded-lg overflow-hidden border filter border-brand-brown transition cursor-pointer ${isChecked ? 'ring ring-brand-brown' : 'ring-0 grayscale'}`}>
       <div className="aspect-w-4 aspect-h-3">
         <img
           src={hampersBox.img_url}
@@ -18,6 +18,13 @@ export default function HampersBox ({ hampersBox }) {
           {hampersBox.price}
         </p>
       </div>
-    </article>
+      <input
+        id={`box${hampersBox.id}`}
+        type="checkbox"
+        className="hidden"
+        defaultChecked={isChecked}
+        onClick={onClick}
+      />
+    </label>
   )
 }

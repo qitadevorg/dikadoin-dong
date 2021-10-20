@@ -116,8 +116,8 @@ export default function OrderForm({ items }) {
           <tbody>
             {
               items.length
-              ? items.map(item => (
-                  <tr key={item.name}>
+              ? items.map((item, i) => (
+                  <tr key={i}>
                     <td className="py-2">
                       {item.name}
                     </td>

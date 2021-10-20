@@ -8,8 +8,11 @@ export async function getSheetData(sheetIndex) {
   const columns = [];
   const data = [];
   for(let i = 0; i < sheet.data[0].rowData.length; i++){
+    const { values } = sheet.data[0].rowData[i];
+    if(values[0].formattedValue === undefined) {
+      break
+    }
     if(i === 0) {
-      const { values } = sheet.data[0].rowData[i];
       for(const value of values){
         if (value.formattedValue) {
           columns.push(value.formattedValue);
@@ -17,7 +20,6 @@ export async function getSheetData(sheetIndex) {
       }
     }
     else {
-      const { values } = sheet.data[0].rowData[i];
       const item = {};
       for(let j = 0; j < columns.length; j++) {
         item[columns[j]] = values[j].formattedValue;

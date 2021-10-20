@@ -13,17 +13,17 @@ const Catalogue = React.forwardRef((_, ref) => {
   const [filteredProducts, setFilteredProducts] = useState(null)
   const isSSR = typeof window === 'undefined'
 
-  const updateFilteredProduct = () => {
-    if([ALL_TYPE, undefined].includes(type)) {
-      setFilteredProducts(<Products />)
-    } else if (type === BOUQUET_TYPE) {
-      setFilteredProducts(<Products />)
-    } else if (type === HAMPERS_TYPE) {
-      setFilteredProducts(<Hampers />)
-    }
-  }
-
   useEffect(() => {
+    const updateFilteredProduct = () => {
+      if([ALL_TYPE, undefined].includes(type)) {
+        setFilteredProducts(<Products />)
+      } else if (type === BOUQUET_TYPE) {
+        setFilteredProducts(<Products />)
+      } else if (type === HAMPERS_TYPE) {
+        setFilteredProducts(<Hampers />)
+      }
+    }
+    
     updateFilteredProduct()
   }, [type])
 

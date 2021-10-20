@@ -44,7 +44,7 @@ export default function IndexPage() {
   return (
     <main>
       <Header goToComponent={goToComponent} />
-      <Hero />
+      <Hero onCTAClick={() => goToComponent(PRODUCT)} />
       <BrandStats />
       <Catalogue
         ref={productRef}

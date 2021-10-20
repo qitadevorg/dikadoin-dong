@@ -49,7 +49,9 @@ export default function Header({ goToComponent }) {
           <FaBars size="1.5rem" />
         </button>
         <nav
+          onKeyDown={handleClickOutsideMenu}
           onClick={handleClickOutsideMenu}
+          role="presentation"
           className={`md:hidden fixed w-full top-0 bg-black bg-opacity-20 z-40 shadow-xl ${isShowingMenu ? 'min-h-screen' : 'h-0'}`}
         >
           <div className={`fixed bg-brand-brown w-80 min-h-screen flex flex-col transition-all ${isShowingMenu ? 'left-0' : '-left-full'}`}>

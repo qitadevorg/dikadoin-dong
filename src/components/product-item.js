@@ -29,7 +29,10 @@ export default function ProductItem({ product }) {
           Beli Sekarang
         </button>
         <Modal ref={orderModalRef} title="Beli Produk">
-          <OrderForm product={product} />
+          <OrderForm items={[{
+            name: `${product.type} - ${product.name}`,
+            price: product.price
+          }]} />
         </Modal>
         <Link
           to={`/products/${product.id}`}

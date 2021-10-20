@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { getAllHampersBoxes, getAllHampersItems } from "../../data/products"
 import HampersItem from "../hampers/hampers-item"
 import HampersBox from "../hampers/hampers-box"
 import SkeletonHampers from "../skeletons/skeleton-hampers"
+import Modal from "../modal"
+import OrderForm from "../order-form"
 
 
 export default function Hampers () {
@@ -10,7 +12,8 @@ export default function Hampers () {
   const [hampersBoxes, setHampersBoxes] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [checkedItems, setCheckedItems] = useState([])
-  const [checkedBoxes, setCheckedBoxes] = useState([])
+  const [checkedBox, setCheckedBox] = useState(null)
+  const orderModalRef = useRef()
 
   const getItemsAndBoxes = async () => {
     setIsLoading(true)
@@ -30,11 +33,25 @@ export default function Hampers () {
   }
 
   const handleBoxClicked = (box) => {
-    if(checkedBoxes.find(checkedBox => checkedBox.id === box.id)){
-      setCheckedBoxes(checkedBoxes.filter(checkedBox => checkedBox.id !== box.id))
+    if(checkedBox && checkedBox.id === box.id){
+      setCheckedBox(null)
     } else {
-      setCheckedBoxes([...checkedBoxes, box])
+      setCheckedBox(box)
     }
+  }
+
+  const orderItems = () => {
+    const orderItems = checkedItems.map(item => ({
+      name: item.name,
+      price: item.price
+    }))
+    if (checkedBox) {
+      orderItems.push({
+        name: checkedBox.name,
+        price: checkedBox.price
+      })
+    }
+    return orderItems
   }
 
   useEffect(() => {
@@ -65,13 +82,19 @@ export default function Hampers () {
               {hampersBoxes.map(box => <HampersBox
                 key={box.id}
                 hampersBox={box}
-                isChecked={!!checkedBoxes.find(checkedBox => checkedBox.id === box.id)}
+                isChecked={checkedBox && checkedBox.id === box.id}
                 onClick={() => handleBoxClicked(box)}
               />)}
             </div>
-            <button className="mt-8 bg-brand-primary font-medium px-5 py-3 rounded-lg">
+            <button
+              className="mt-8 bg-brand-primary font-medium px-5 py-3 rounded-lg"
+              onClick={() => orderModalRef.current.openModal()}
+            >
               Pesan Sekarang
             </button>
+            <Modal ref={orderModalRef} title="Beli Produk">
+              <OrderForm items={orderItems()} />
+            </Modal>
           </div>
       }
     </div>

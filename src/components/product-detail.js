@@ -59,7 +59,10 @@ export default function ProductDetail({product, productsInThisType, isLoading}) 
                   Pesan Sekarang
                 </button>
                 <Modal ref={orderModalRef} title="Beli Produk">
-                  <OrderForm product={product} />
+                  <OrderForm items={[{
+                    name: `${product.type} - ${product.name}`,
+                    price: product.price
+                  }]} />
                 </Modal>
               </div>
             </article>

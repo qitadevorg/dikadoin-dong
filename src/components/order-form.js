@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function OrderForm({ product }) {
+export default function OrderForm({ items }) {
 
   const [senderName, setSenderName] = useState('')
   const [senderPhone, setSenderPhone] = useState('')
@@ -9,7 +9,11 @@ export default function OrderForm({ product }) {
   const [amIReceiver, setAmIReceiver] = useState(false)
   const [greetingMessage, setGreetingMessage] = useState('')
 
-  const phone = '6282251919416'
+  const phone = '6281357139503'
+
+  const itemsMessage = items => items.map((item, i) => (`
+    ${i + 1}. ${item.name} - ${item.price}
+  `)).join('')
 
   const message = () =>
     `Halo kak!
@@ -20,7 +24,7 @@ export default function OrderForm({ product }) {
     Nama penerima: ${amIReceiver ? senderName : receiverName}
     No. HP penerima: ${amIReceiver ? senderPhone : receiverPhone}
 
-    Pesanan: ${product.type} - ${product.name}
+    Pesanan: ${itemsMessage(items)}
     
     Ucapan:
     ${greetingMessage}`
@@ -110,15 +114,35 @@ export default function OrderForm({ product }) {
         <h3 className="font-bold text-sm">Produk</h3>
         <table className="w-full">
           <tbody>
+            {
+              items.length
+              ? items.map(item => (
+                  <tr key={item.name}>
+                    <td className="py-2">
+                      {item.name}
+                    </td>
+                    <td className="text-right py-2">
+                      {item.price}
+                    </td>
+                  </tr>
+                ))
+              : <tr>
+                  <td colSpan={2} className="py-2">
+                    Belum ada produk
+                  </td>
+                </tr>
+            }
+          </tbody>
+          <tfoot>
             <tr>
               <td className="py-2">
-                {product.type} - {product.name}
+                Total
               </td>
               <td className="text-right py-2">
-                Rp {product.price}
+                {items && items.reduce((sum, item) => sum + parseFloat(item.price.replace(/[^0-9,-]+/g,"")), 0)}
               </td>
             </tr>
-          </tbody>
+          </tfoot>
         </table>
       </div>
       <div className="mt-4">

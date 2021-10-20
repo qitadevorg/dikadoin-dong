@@ -5,14 +5,16 @@ require("dotenv").config({
 module.exports = {
   pathPrefix: "/dikadoin-dong",
   siteMetadata: {
-    siteUrl: "https://qitadev.github.io",
+    siteUrl: "https://qitadev.github.io/dikadoin-dong",
     title: "Dikadoin.dong",
+    description: "Bagikan kebahagiaan dengan berbagi kisah bersama orang spesial",
   },
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    "gatsby-plugin-use-query-params"
+    'gatsby-plugin-use-query-params',
+    'gatsby-plugin-react-helmet'
   ],
 };

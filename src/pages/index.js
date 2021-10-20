@@ -7,6 +7,7 @@ import About from '../components/about'
 import { getAllProducts } from '../data/products'
 import Footer from '../components/footer'
 import { ABOUT_US, CONTACT, PRODUCT } from '../constants/navigation'
+import Layout from '../components/layout'
 
 export default function IndexPage() {
   const [products, setProducts] = useState([])
@@ -25,7 +26,6 @@ export default function IndexPage() {
   const goToComponent = (destination) => {
     switch (destination) {
       case PRODUCT:
-        console.log(productRef)
         productRef.current.scrollIntoView({ behavior: 'smooth' })
         break;
       case ABOUT_US:
@@ -34,6 +34,8 @@ export default function IndexPage() {
       case CONTACT:
         contactRef.current.scrollIntoView({ behavior: 'smooth' })
         break;
+      default:
+        productRef.current.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -42,7 +44,7 @@ export default function IndexPage() {
   }, [])
 
   return (
-    <main>
+    <Layout>
       <Header goToComponent={goToComponent} />
       <Hero onCTAClick={() => goToComponent(PRODUCT)} />
       <BrandStats />
@@ -53,6 +55,6 @@ export default function IndexPage() {
       />
       <About ref={aboutRef} />
       <Footer ref={contactRef} />
-    </main>
+    </Layout>
   )
 }

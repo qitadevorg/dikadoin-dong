@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { getProductsById, getProductsByType } from '../../data/products'
-import Header from '../../components/header'
 import ProductDetail from '../../components/product-detail'
+import Footer from '../../components/footer'
+import Breadcrumb from '../../components/breadcrumb'
 
 export default function Product({ params }) {
   const productId = params.id
@@ -24,12 +25,13 @@ export default function Product({ params }) {
 
   return (
     <main>
-      <Header />
+      <Breadcrumb path={[{ name: 'Produk' }]} />
       <ProductDetail
         product={product}
         productsInThisType={productsInThisType}
         isLoading={isLoading}
       />
+      <Footer />
     </main>
   )
 }

@@ -8,8 +8,8 @@ export default function ProductDetail({product, productsInThisType, isLoading}) 
   const orderModalRef = useRef()
 
   return (
-    <section className="bg-brand-yellow">
-      <div className="max-w-5xl mx-auto p-5">
+    <section className="bg-brand-yellow p-5">
+      <div className="max-w-5xl mx-auto">
         {
           isLoading
           ? <SkeletonProductDetail />

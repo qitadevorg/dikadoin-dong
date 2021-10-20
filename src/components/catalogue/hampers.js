@@ -76,7 +76,7 @@ export default function Hampers () {
               />)}
             </div>
             <h2 className="mt-8 text-xl font-bold">
-              Pilih Item
+              Pilih Box
             </h2>
             <div className="mt-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
               {hampersBoxes.map(box => <HampersBox

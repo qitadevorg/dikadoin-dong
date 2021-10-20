@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getAllProducts } from '../../data/products'
 import ProductItem from '../product-item'
-import SkeletonProducts from '../skeleton-products'
+import SkeletonProducts from '../skeletons/skeleton-products'
 
 export default function Products() {
 

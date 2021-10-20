@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React, { useRef } from 'react'
 import Modal from './modal'
 import OrderForm from './order-form'
-import SkeletonProductDetail from './skeleton-product-detail'
+import SkeletonProductDetail from './skeletons/skeleton-product-detail'
 
 export default function ProductDetail({product, productsInThisType, isLoading}) {
   const orderModalRef = useRef()

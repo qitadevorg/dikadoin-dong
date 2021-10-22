@@ -10,7 +10,7 @@ const About = React.forwardRef((_, ref) => {
                         Tentang Kami
                     </h1>
                     <p className="mt-4">
-                        Dikadoin.dong merupakan bisnis industri kreatif yang menghasilkan produk berupa custom gift dan variasi buket dan berlokasi di Yogyakarta.
+                        Dikadoin.dong merupakan bisnis industri kreatif yang menghasilkan produk berupa custom gift dan variasi buket yang berlokasi di Yogyakarta.
                         Konsep yang ditawarkan adalah berupa kesederhanaan yang bernilai estetika. Dengan Tagline "Berbagi Kisah" membantu untuk memvisualisasikan rasa sayang dengan produk kami.
                     </p>
                 </div>

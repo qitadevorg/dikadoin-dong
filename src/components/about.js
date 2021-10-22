@@ -16,7 +16,7 @@ const About = React.forwardRef((_, ref) => {
                 </div>
                 <div className="w-full sm:w-1/2 mt-8 flex justify-center sm:mt-0">
                     <StaticImage
-                        src="../images/hero-image-1.webp"
+                        src="../images/about-us.webp"
                         alt="dikadoin logo"
                         width={300}
                         placeholder="none"

@@ -26,7 +26,7 @@ export default function ProductDetail({product, productsInThisType, isLoading}) 
                   {product.type} - {product.name}
                 </h1>
                 <p>
-                  Terjual 40
+                  Terjual {product.sold}
                 </p>
                 <p className="mt-4 font-bold text-4xl">
                   {product.price}

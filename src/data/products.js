@@ -26,6 +26,12 @@ export async function getPrunedProducts() {
   return prunedProducts;
 }
 
+export async function getBestSellerProducts() {
+  const products = await getAllProducts();
+  const bestSellerProducts = products.filter(product => product.is_best_seller === 'TRUE');
+  return bestSellerProducts;
+}
+
 export async function getProductsByType(type){
   const products = await getAllProducts();
   return products.filter(product => product.type === type);

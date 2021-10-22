@@ -22,7 +22,7 @@ export async function getSheetData(sheetIndex) {
     else {
       const item = {};
       for(let j = 0; j < columns.length; j++) {
-        item[columns[j]] = values[j].formattedValue;
+        item[columns[j]] = values[j]?.formattedValue;
       }
       data.push(item);
     }

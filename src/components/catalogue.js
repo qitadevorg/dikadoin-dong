@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {StringParam, useQueryParam} from "use-query-params";
 import {ALL_TYPE, BOUQUET_TYPE, HAMPERS_TYPE} from "../constants/products";
+import BestProducts from './catalogue/best-products';
 import Hampers from './catalogue/hampers'
 import Products from './catalogue/products';
 
@@ -16,7 +17,7 @@ const Catalogue = React.forwardRef((_, ref) => {
   useEffect(() => {
     const updateFilteredProduct = () => {
       if([ALL_TYPE, undefined].includes(type)) {
-        setFilteredProducts(<Products />)
+        setFilteredProducts(<BestProducts />)
       } else if (type === BOUQUET_TYPE) {
         setFilteredProducts(<Products />)
       } else if (type === HAMPERS_TYPE) {

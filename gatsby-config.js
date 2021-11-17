@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: "https://qitadev.github.io/dikadoin-dong",
     title: "Dikadoin.dong",
     description: "Bagikan kebahagiaan dengan berbagi kisah bersama orang spesial",
+    googleSiteVerification: 'HxQVztMq4UZ7ExI-JtxWpgUygnvacrPF4XlZ50SLB5Q'
   },
   plugins: [
     'gatsby-plugin-postcss',

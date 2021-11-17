@@ -8,6 +8,8 @@ export default function OrderForm({ items }) {
   const [receiverPhone, setReceiverPhone] = useState('')
   const [amIReceiver, setAmIReceiver] = useState(false)
   const [greetingMessage, setGreetingMessage] = useState('')
+  const [isSelfService, setIsSelfService] = useState(false)
+  const [deliveryAddress, setDeliveryAddress] = useState('')
 
   const phone = '6281357139503'
 
@@ -23,6 +25,7 @@ export default function OrderForm({ items }) {
     
     Nama penerima: ${amIReceiver ? senderName : receiverName}
     No. HP penerima: ${amIReceiver ? senderPhone : receiverPhone}
+    Alamat Pengantaran: ${isSelfService ? 'Saya ambil sendiri' : deliveryAddress}
 
     Pesanan: ${itemsMessage(items)}
     
@@ -34,6 +37,10 @@ export default function OrderForm({ items }) {
 
   const handleAmIReceiverChange = (event) => {
     setAmIReceiver(event.target.checked)
+  }
+
+  const handleIsSelfServiceChange = (event) => {
+    setIsSelfService(event.target.checked)
   }
 
   return (
@@ -111,13 +118,46 @@ export default function OrderForm({ items }) {
           </>
       }
       <div className="mt-4">
+        <input
+          type="checkbox"
+          id="isSelfService"
+          defaultChecked={isSelfService}
+          onChange={handleIsSelfServiceChange}
+        />
+        <label
+          htmlFor="isSelfService"
+          className="ml-2"
+        >
+          Saya ambil sendiri
+        </label>
+      </div>
+      {
+        isSelfService
+        ? ''
+        : <>
+            <div className="mt-4">
+              <label htmlFor="address" className="text-sm block">
+                Alamat Pengantaran
+              </label>
+              <textarea
+                id="address"
+                placeholder="Alamat"
+                value={deliveryAddress}
+                onChange={(event) => setDeliveryAddress(event.target.value)}
+                rows={3}
+                className="mt-2 px-4 py-2 w-full rounded-lg border border-brand-brown transition focus:outline-none focus:ring focus:ring-brand-brown"
+              />
+            </div>
+          </>
+      }
+      <div className="mt-4">
         <h3 className="font-bold text-sm">Produk</h3>
         <table className="w-full">
           <tbody>
             {
               items.length
-              ? items.map(item => (
-                  <tr key={item.name}>
+              ? items.map((item, i) => (
+                  <tr key={i}>
                     <td className="py-2">
                       {item.name}
                     </td>

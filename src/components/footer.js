@@ -13,7 +13,7 @@ const Footer = React.forwardRef((_, ref) => {
                 <p className="my-4 text-center">
                     <a
                         href="https://www.instagram.com/dikadoin.dong"
-                        className="mx-2"
+                        className="mx-2 underline hover:text-brand-primary"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -22,7 +22,7 @@ const Footer = React.forwardRef((_, ref) => {
                     |
                     <a
                         href="https://wa.me/6281357139503"
-                        className="mx-2"
+                        className="mx-2 underline hover:text-brand-primary"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -31,7 +31,7 @@ const Footer = React.forwardRef((_, ref) => {
                     |
                     <a
                         href="https://shopee.co.id/dikadoin.dong"
-                        className="mx-2"
+                        className="mx-2 underline hover:text-brand-primary"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

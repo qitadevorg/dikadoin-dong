@@ -6,7 +6,7 @@ export default function CatalogueTabs({ type, changeType }) {
     <ul className="mt-8 text-center flex justify-center">
       <li>
         <button onClick={() => changeType(ALL_TYPE)} className={`block mx-2 px-3 py-1 rounded ${[ALL_TYPE, undefined].includes(type) ? 'bg-brand-primary' : ''}`}>
-          Semua
+          Terlaris
         </button>
       </li>
       <li>
